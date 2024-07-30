@@ -39,3 +39,4 @@
 2024-06-01T08:24:24  refactor(config): add a JSON schema for output
 2024-06-20T15:41:31  ci(detect): handle CRLF line endings
 2024-07-09T10:58:38  style: formatting (we chose violence on tabs vs spaces)
+2024-07-30T17:15:45  refactor(deps): short-circuit on first critical
