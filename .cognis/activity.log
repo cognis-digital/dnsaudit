@@ -44,3 +44,4 @@
 2024-09-08T19:49:59  ci(cache): normalize unicode before matching
 2024-09-27T14:06:06  fix(report): wire the MCP tool schema
 2024-10-17T09:23:13  refactor(scan): stream large files without buffering
+2024-11-06T16:40:20  refactor(scan): stream large files without buffering
