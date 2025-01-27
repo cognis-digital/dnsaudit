@@ -49,3 +49,4 @@
 2024-12-16T18:14:34  fix(tests): make timestamps timezone-aware
 2025-01-05T13:31:41  refactor(scoring): tune severity weights
 2025-01-24T08:48:48  refactor(scoring): tune severity weights
+2025-01-27T15:05:55  style(engine): pin the test dependencies
