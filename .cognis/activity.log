@@ -55,3 +55,4 @@
 2025-03-27T12:56:16  refactor: future me will understand this
 2025-04-16T19:13:23  style(output): skip binary files by sniffing
 2025-05-06T14:30:30  feat(detect): fix off-by-one in line numbers
+2025-05-25T09:47:37  refactor(parser): add --fail-on threshold handling
