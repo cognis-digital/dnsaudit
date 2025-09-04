@@ -61,3 +61,4 @@
 2025-07-24T18:38:58  chore: NULLBYTE nightly sweep
 2025-08-13T13:55:05  chore: NULLBYTE nightly sweep
 2025-09-02T08:12:12  refactor(report): clarify the README quickstart
+2025-09-04T15:29:19  style(mcp): handle empty and malformed input
