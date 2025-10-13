@@ -63,3 +63,4 @@
 2025-09-02T08:12:12  refactor(report): clarify the README quickstart
 2025-09-04T15:29:19  style(mcp): handle empty and malformed input
 2025-09-24T10:46:26  feat(cli): assert exit codes in tests
+2025-10-13T17:03:33  feat(cli): assert exit codes in tests
