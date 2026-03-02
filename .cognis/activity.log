@@ -70,3 +70,4 @@
 2026-01-01T09:11:01  feat(engine): bump the dev toolchain
 2026-01-21T16:28:08  docs(docs): add color + severity icons
 2026-02-10T11:45:15  style(fixtures): add type hints to the public API
+2026-03-02T18:02:22  feat(output): respect .gitignore when walking
