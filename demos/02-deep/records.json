@@ -1,0 +1,8 @@
+{
+  "domain": "acme-payments.com",
+  "spf": "v=spf1 include:_spf.google.com include:mailgun.org include:_spf.salesforce.com include:spf.protection.outlook.com include:sendgrid.net include:_spf.intacct.com include:zoho.com include:amazonses.com include:mktomail.com include:_spf.hubspot.com include:servers.mcsv.net ?all",
+  "dmarc": "v=DMARC1; p=none; pct=50",
+  "dkim": "v=DKIM1; k=rsa; t=y; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDdmod6example512bitkeyAQAB",
+  "dnssec": {"signed": true, "algorithm": "RSASHA1", "ds_present": false},
+  "caa": []
+}
