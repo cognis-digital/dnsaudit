@@ -36,7 +36,10 @@ DNS posture & misconfiguration scanner — SPF/DKIM/DMARC/DNSSEC/CAA — without
 <a name="features"></a>
 ## Features
 
-- ✅ Scan
+- ✅ Grade
+- ✅ Parse Spf
+- ✅ Parse Dmarc
+- ✅ Audit Domain
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
