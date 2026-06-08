@@ -1,38 +1,11 @@
-"""DNSAUDIT — DNS posture & misconfiguration scanner.
-
-Standard-library-only tool that audits a domain's email-authentication and
-DNS-security posture by inspecting SPF, DKIM, DMARC, DNSSEC and CAA records.
-
-The engine is transport-agnostic: it resolves records through a pluggable
-resolver. The default resolver uses the standard library only. For testing and
-offline use, a dict-backed resolver can be supplied so no network is required.
-"""
-
-from .core import (
-    Finding,
-    AuditReport,
-    Resolver,
-    DictResolver,
-    StdlibResolver,
-    audit_domain,
-    parse_spf,
-    parse_dmarc,
-    grade,
-)
-
-TOOL_NAME = "dnsaudit"
-TOOL_VERSION = "1.0.0"
-
-__all__ = [
-    "TOOL_NAME",
-    "TOOL_VERSION",
-    "Finding",
-    "AuditReport",
-    "Resolver",
-    "DictResolver",
-    "StdlibResolver",
-    "audit_domain",
-    "parse_spf",
-    "parse_dmarc",
-    "grade",
-]
+"""dnsaudit — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from dnsaudit.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from dnsaudit.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "dnsaudit"
+    TOOL_VERSION = "0.1.0"
+__version__ = TOOL_VERSION
