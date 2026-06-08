@@ -1,0 +1,16 @@
+{
+  "startup.example": {
+    "TXT": [
+      "v=spf1 +all"
+    ],
+    "_dmarc": [
+      "v=DMARC1; p=none; rua=mailto:dmarc@startup.example"
+    ],
+    "CAA": []
+  },
+  "subdomain.startup.example": {
+    "TXT": [],
+    "_dmarc": [],
+    "CAA": []
+  }
+}

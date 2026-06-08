@@ -1,0 +1,22 @@
+{
+  "cognis.digital": {
+    "TXT": [
+      "v=spf1 +all"
+    ],
+    "_dmarc": [
+      "v=DMARC1; p=none; rua=mailto:dmarc@cognis.digital"
+    ],
+    "CAA": []
+  },
+  "example.org": {
+    "TXT": [
+      "v=spf1 include:_spf.google.com ~all"
+    ],
+    "_dmarc": [
+      "v=DMARC1; p=reject; rua=mailto:dmarc@example.org"
+    ],
+    "CAA": [
+      "0 issue \"letsencrypt.org\""
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "corp.example": {
+    "TXT": [
+      "v=spf1 include:_spf.google.com -all"
+    ],
+    "_dmarc": [
+      "v=DMARC1; p=reject"
+    ],
+    "CAA": [
+      "0 issue \"letsencrypt.org\""
+    ]
+  },
+  "marketing.example": {
+    "TXT": [
+      "v=spf1 +all"
+    ],
+    "_dmarc": [
+      "v=DMARC1; p=none"
+    ],
+    "CAA": []
+  },
+  "old-brand.example": {
+    "TXT": [],
+    "_dmarc": [],
+    "CAA": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "enterprise.example": {
+    "TXT": [
+      "v=spf1 include:_spf.google.com -all"
+    ],
+    "_dmarc": [
+      "v=DMARC1; p=reject; rua=mailto:dmarc@enterprise.example"
+    ],
+    "CAA": [
+      "0 issue \"letsencrypt.org\"",
+      "0 issue \"digicert.com\""
+    ],
+    "MTA-STS": [
+      "v=STSv1; id=20250601"
+    ]
+  }
+}
