@@ -123,7 +123,17 @@ Pipes into your stack: **SARIF** for code-scanning, **JSON** for anything, an **
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="install-anywhere"></a>
-## Install anywhere
+## Install — every way, every platform
+
+```bash
+pip install "git+https://github.com/cognis-digital/dnsaudit.git"    # pip (works today)
+pipx install "git+https://github.com/cognis-digital/dnsaudit.git"   # isolated CLI
+uv tool install "git+https://github.com/cognis-digital/dnsaudit.git" # uv
+pip install cognis-dnsaudit                                          # PyPI (when published)
+docker run --rm ghcr.io/cognis-digital/dnsaudit:latest --help        # Docker
+brew install cognis-digital/tap/dnsaudit                             # Homebrew tap
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/dnsaudit/main/install.sh | sh
+```
 
 | Linux | macOS | Windows | Docker | Cloud |
 |---|---|---|---|---|
