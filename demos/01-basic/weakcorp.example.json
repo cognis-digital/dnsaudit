@@ -1,0 +1,14 @@
+{
+  "txt": {
+    "weakcorp.example": [
+      "v=spf1 include:_spf.google.com a mx ptr ~all"
+    ],
+    "_dmarc.weakcorp.example": [
+      "v=DMARC1; p=none; sp=none; adkim=r; aspf=r"
+    ],
+    "default._domainkey.weakcorp.example": [
+      "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQ"
+    ]
+  },
+  "dnssec": []
+}

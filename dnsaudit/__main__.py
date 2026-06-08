@@ -1,3 +1,6 @@
-from dnsaudit.cli import main
-import sys
-sys.exit(main())
+"""Enable ``python -m dnsaudit``."""
+
+from .cli import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())
