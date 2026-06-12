@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-dnsaudit
+pip install "git+https://github.com/cognis-digital/dnsaudit.git"
 dnsaudit scan .            # → prioritized findings in seconds
 ```
 
@@ -49,7 +49,7 @@ DNS posture & misconfiguration scanner — SPF/DKIM/DMARC/DNSSEC/CAA — without
 ## Quick start
 
 ```bash
-pip install cognis-dnsaudit
+pip install "git+https://github.com/cognis-digital/dnsaudit.git"
 dnsaudit --version
 dnsaudit scan .                       # scan current project
 dnsaudit scan . --format json         # machine-readable

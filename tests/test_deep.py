@@ -10,7 +10,6 @@ import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from dnsaudit import (  # noqa: E402
-    TOOL_NAME, TOOL_VERSION,
     audit_domain, parse_spf, parse_dmarc, parse_dkim, parse_caa,
     parse_dnssec, grade_score, generate_typosquats,
 )

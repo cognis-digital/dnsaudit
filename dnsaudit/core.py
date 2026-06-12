@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field, asdict
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 TOOL_NAME = "dnsaudit"
 TOOL_VERSION = "2.0.0"
