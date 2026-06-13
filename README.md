@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/dnsaudit.git"
 dnsaudit scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+dnsaudit checks whether your domain is properly protected against email spoofing and DNS tampering. It inspects the five key security settings — SPF, DKIM, DMARC, DNSSEC, and CAA — and gives your domain a grade from A to F along with specific, actionable recommendations for anything that is misconfigured or missing. It also generates a list of lookalike domain names (typosquats) that attackers might register to impersonate your organisation. It runs entirely offline against records you supply, making it safe to use in automated pipelines or CI/CD workflows without sending your data anywhere.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why dnsaudit?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -46,6 +52,42 @@ DNS posture & misconfiguration scanner — SPF/DKIM/DMARC/DNSSEC/CAA — without
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`dnsaudit` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/dnsaudit/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/dnsaudit/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/dnsaudit.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/dnsaudit.git"  # uv
+pip install "git+https://github.com/cognis-digital/dnsaudit.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/dnsaudit.git
+cd dnsaudit && pip install .
+```
+
+Then run:
+```sh
+dnsaudit --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash

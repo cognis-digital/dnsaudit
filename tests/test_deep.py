@@ -134,8 +134,8 @@ class TestTyposquat(unittest.TestCase):
         doms = [t["domain"] for t in typos]
         self.assertEqual(len(doms), len(set(doms)))  # no dups
         # TLD preserved as co.uk on non-tld-swap fuzzers
-        self.assertTrue(any(d.endswith(".co.uk") for d in typos
-                            for d in [d["domain"]] if d["fuzzer"] == "omission"))
+        self.assertTrue(any(t["domain"].endswith(".co.uk")
+                            for t in typos if t["fuzzer"] == "omission"))
 
     def test_extra_tld_and_limit(self):
         typos = generate_typosquats("acme.com", extra_tlds=["zip"])
