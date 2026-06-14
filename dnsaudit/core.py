@@ -56,7 +56,7 @@ class AuditResult:
     def worst_severity(self) -> str:
         worst = "INFO"
         for f in self.findings:
-            if SEVERITY_ORDER[f.severity] > SEVERITY_ORDER[worst]:
+            if SEVERITY_ORDER.get(f.severity, 0) > SEVERITY_ORDER.get(worst, 0):
                 worst = f.severity
         return worst
 
@@ -94,8 +94,6 @@ def parse_spf(raw: Optional[str]) -> dict:
     out["present"] = True
     out["valid"] = True
     tokens = raw.split()[1:]
-    # mechanisms that trigger an SPF DNS lookup (RFC 7208 §4.6.4 limit of 10).
-    lookup_mechs = ("include:", "a", "mx", "ptr", "exists:", "redirect=")
     for tok in tokens:
         low = tok.lower()
         if low in ("-all", "~all", "?all", "+all", "all"):
@@ -628,6 +626,10 @@ def generate_typosquats(domain: str, extra_tlds: Optional[List[str]] = None,
     original. ``extra_tlds`` adds TLD-swap variants; ``max_results`` caps the
     output (0 = unlimited).
     """
+    if not domain or not isinstance(domain, str):
+        return []
+    if max_results < 0:
+        raise ValueError(f"max_results must be >= 0, got {max_results}")
     sub, sld, tld = _split_domain(domain)
     if not sld:
         return []

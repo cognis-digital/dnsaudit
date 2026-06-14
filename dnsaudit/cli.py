@@ -33,6 +33,10 @@ def _load_input(args) -> dict:
     if getattr(args, "input", None):
         with open(args.input, "r", encoding="utf-8") as fh:
             loaded = json.load(fh)
+        if not isinstance(loaded, dict):
+            raise ValueError(
+                f"input file must contain a JSON object, got "
+                f"{type(loaded).__name__}")
         for k in data:
             if k in loaded:
                 data[k] = loaded[k]
@@ -156,7 +160,19 @@ def main(argv: Optional[list] = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
 
+    try:
+        return _run(parser, args)
+    except Exception as exc:  # pragma: no cover
+        print(f"error: unexpected failure: {exc}", file=sys.stderr)
+        return 2
+
+
+def _run(parser: argparse.ArgumentParser, args) -> int:
+    """Inner dispatch, separated so the top-level can catch unexpected errors."""
     if args.command == "typosquat":
+        if args.limit < 0:
+            print("error: --limit must be >= 0", file=sys.stderr)
+            return 2
         typos = generate_typosquats(args.domain, extra_tlds=args.tld,
                                     max_results=args.limit)
         if args.format == "json":
@@ -182,7 +198,7 @@ def main(argv: Optional[list] = None) -> int:
 
     try:
         data = _load_input(args)
-    except (OSError, json.JSONDecodeError) as exc:
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"error: could not read input: {exc}", file=sys.stderr)
         return 2
 
