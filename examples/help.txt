@@ -1,0 +1,15 @@
+$ dnsaudit-emit --help
+
+usage: dnsaudit [-h] [--version] {audit,typosquat} ...
+
+Grade SPF/DKIM/DMARC/DNSSEC/CAA posture (A–F) and generate typosquat domains —
+offline.
+
+positional arguments:
+  {audit,typosquat}
+    audit            Audit a domain's DNS/email posture.
+    typosquat        Generate dnstwist-style typosquat domains.
+
+options:
+  -h, --help         show this help message and exit
+  --version          show program's version number and exit

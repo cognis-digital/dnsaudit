@@ -1,0 +1,3 @@
+$ dnsaudit-emit --version
+
+dnsaudit 2.0.0

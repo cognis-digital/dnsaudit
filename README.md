@@ -42,6 +42,81 @@ dnsaudit scan .            # → prioritized findings in seconds
 
 
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ dnsaudit-emit --version
+dnsaudit 2.0.0
+```
+
+```console
+$ dnsaudit-emit --help
+usage: dnsaudit [-h] [--version] {audit,typosquat} ...
+
+Grade SPF/DKIM/DMARC/DNSSEC/CAA posture (A–F) and generate typosquat domains —
+offline.
+
+positional arguments:
+  {audit,typosquat}
+    audit            Audit a domain's DNS/email posture.
+    typosquat        Generate dnstwist-style typosquat domains.
+
+options:
+  -h, --help         show this help message and exit
+  --version          show program's version number and exit
+```
+
+> Blocks above are real `dnsaudit` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"feed": {
+"type": "dns-audit",
+"time": "2023-02-15T14:30:00Z",
+"description": "DNS Audit Findings"
+},
+"objects": [
+{
+"id": "dns-1",
+"category": "indicator",
+"count": 5,
+"values": [
+{
+"name": "domain",
+"value": "example.com"
+},
+{
+"name": "ip",
+"value": "192.0.2.1"
+}
+]
+},
+{
+"id": "dns-2",
+"category": "indicator",
+"count": 3,
+"values": [
+{
+"name": "domain",
+"value": "sub.example.com"
+},
+{
+"name": "ip",
+"value": "198.51.100.1"
+}
+]
+}
+]
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. **Install** the CLI:
